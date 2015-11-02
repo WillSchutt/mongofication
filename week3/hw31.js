@@ -16,14 +16,14 @@ MongoClient.connect('mongodb://localhost:27017/school', function (err, db) {
 		} else {
 			if (doc.scores.length > 0) {
 				//console.log('Average score before: ' + averageScores(doc.scores));
-				console.log("Before  ");
-				console.dir(doc.scores);
+				// console.log("Before  ");
+				// console.dir(doc.scores);
 				doc.scores = removeLowestHomeworkScore(doc.scores);
-				console.dir("After ");
-				console.dir(doc.scores);
+				// console.dir("After ");
+				// console.dir(doc.scores);
 				data.save(doc, function (err, saved) {
 					if (err) throw err;
-					console.dir("Successfully saved " + saved + " document!");
+					//console.dir("Successfully saved " + saved + " document!");
 				});
 				//console.dir(doc);
 				var averageScore = averageScores(doc.scores);
